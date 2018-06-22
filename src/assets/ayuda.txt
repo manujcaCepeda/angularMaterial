@@ -1,0 +1,25 @@
+ng new proyecto
+cd proyecto
+ng add @angular/material@6.2.1
+npm install --save @angular/flex-layout
+ng serve
+
+ng g m shared/material --flat --spec=false
+ng g m demo/demo --flat --routing
+
+ng g c demo/buttons --no-spec --inline-style --inline-template
+ng g c demo/flexbox --no-spec 
+
+ng g m contactmanager --routing --no-spec
+ng g c contactmanager/contactmanager-app --no-spec --flat --inline-style --inline-template
+
+ng g c contactmanager/components/toolbar --no-spec
+ng g c contactmanager/components/main-content --no-spec
+ng g c contactmanager/components/sidenav --no-spec
+
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/manujcaCepeda/angularMaterial.git
+git push -u origin master
