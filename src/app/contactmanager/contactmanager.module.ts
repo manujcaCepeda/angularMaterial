@@ -10,6 +10,9 @@ import { ContactmanagerRoutingModule } from './contactmanager-routing.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './services/user.service';
+import { NotesComponent } from './components/notes/notes.component';
 
 
 
@@ -19,8 +22,10 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
+    HttpClientModule,
     ContactmanagerRoutingModule
   ],
-  declarations: [ContactmanagerAppComponent, ToolbarComponent, MainContentComponent, SidenavComponent]
+  declarations: [ContactmanagerAppComponent, ToolbarComponent, MainContentComponent, SidenavComponent, NotesComponent],
+  providers: [UserService]
 })
 export class ContactmanagerModule { }
