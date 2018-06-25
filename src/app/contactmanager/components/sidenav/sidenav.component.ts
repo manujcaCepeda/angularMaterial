@@ -18,6 +18,9 @@ export class SidenavComponent implements OnInit {
   users: Observable<User[]>;
   @ViewChild(MatDrawer) sidenav: MatDrawer;
 
+  isDarkTheme: boolean = false;
+  dir: string = "ltr";
+
   constructor(zone: NgZone, private userService: UserService, private router: Router) {
     this.mediaMatcher.addListener(mq =>
       zone.run(() => this.mediaMatcher = mq));
@@ -42,4 +45,12 @@ export class SidenavComponent implements OnInit {
     return this.mediaMatcher.matches;
   }
 
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+  }
+
+  toogleDir() {
+    this.dir = this.dir == "ltr" ? "rtl" : "ltr";
+    //this.sidenav.toggle().then(() => this.sidenav.toggle()); versiones anteriores soluciona un error al cambiar la psocion del sidenar
+  }
 }

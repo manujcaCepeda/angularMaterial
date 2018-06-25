@@ -37,6 +37,15 @@ export class UserService {
 
   userById(id: number) {
     return this.dataSource.users.find(x => x.id == id);
-    
+
+  }
+
+  addUser(user: User): Promise<User> {
+    return new Promise((resolver, reject) => {
+      user.id = this.dataSource.users.length + 1;
+      this.dataSource.users.push(user);
+      this._users.next(Object.assign({}, this.dataSource).users);
+      resolver(user);
+    })
   }
 }

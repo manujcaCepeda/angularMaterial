@@ -32,3 +32,6 @@ ng g class contactmanager/models/note
 ng generate @angular/material:material-table --name contactmanager/components/notes
 
 --para probar si crear --dry-routing
+
+ng g c contactmanager/new-contact-dialog --no-spec
+
